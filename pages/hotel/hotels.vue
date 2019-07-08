@@ -167,15 +167,15 @@
       </div>
     </div>
     <!-- 评论 -->
-   <Comments :hotelsComments='hotelsComments'/>
+   <hotelComments :hotelsComments='hotelsComments'/>
   </div>
 </template>
 <script>
 import Map from "@/components/hotel/map.vue";
-import Comments from "@/components/hotel/comments.vue";
+import hotelComments from "@/components/hotel/comments.vue";
 export default {
   components: {
-    Map,Comments
+    Map,hotelComments
   },
   data() {
     //这里存放数据
@@ -238,7 +238,7 @@ export default {
     async getHotelsData() {
       let res = await this.$axios({
         url: `hotels`,
-        params: { id: 18 }
+        params: { id: this.$route.query.id }
       });
       this.hotelsData = res.data.data[0];
     },

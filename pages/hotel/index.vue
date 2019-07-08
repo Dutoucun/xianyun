@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import Map from "@/components/hotel/map.vue"
+
 export default {
 //import引入的组件需要注入到对象中才能使用
 components: {
-    Map
+    
 },
 data() {
 //这里存放数据
